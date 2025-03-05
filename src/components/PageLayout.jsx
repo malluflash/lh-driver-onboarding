@@ -6,13 +6,13 @@ function PageLayout({ children, title, subtitle, compact = false }) {
       <LaundryheapLogo/>
       
       {title && (
-        <h1 className={`text-center text-2xl mt-6 mb-8 font-medium animate-slide-up ${compact ? "text-3xl" : ""}`}>
+        <h1 className={`text-center text-xl mt-6 mb-8 font-medium animate-slide-up ${compact ? "text-3xl" : ""}`}>
           {title}
         </h1>
       )}
       
       {subtitle && (
-        <h2 className="text-center text-xl mt-6 mb-8 font-medium animate-slide-up">
+        <h2 className="text-center text-l mt-6 mb-8 font-medium animate-slide-up">
           {subtitle}
         </h2>
       )}

@@ -10,7 +10,6 @@ import Welcome from "./pages/Welcome";
 import Verify from "./pages/Verify";
 import Introduction from "./pages/Introduction";
 import FleetAgent from "./pages/FleetAgent";
-import OnboardingTime from "./pages/OnboardingTime";
 import About from "./pages/About";
 import OnboardingStages from "./pages/OnboardingStages";
 import Liabilities from "./pages/Liabilities";
@@ -38,7 +37,6 @@ function App() {
               <Route path="/verify" element={<Verify />} />
               <Route path="/introduction" element={<Introduction />} />
               <Route path="/fleet-agent" element={<FleetAgent />} />
-              <Route path="/onboarding-time" element={<OnboardingTime />} />
               <Route path="/about" element={<About />} />
               <Route path="/onboarding-stages" element={<OnboardingStages />} />
               <Route path="/liabilities" element={<Liabilities />} />
