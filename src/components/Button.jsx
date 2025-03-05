@@ -12,10 +12,10 @@ function Button({
     <button
       type={type}
       onClick={onClick}
-      className={`laundryheap-btn ${className}`}
+      className={`laundryheap-btn flex items-center justify-center gap-2 ${className}`}
       disabled={disabled}
     >
-      <span>{children}</span>
+      {children}
       {showArrow && <ArrowRight size={18} />}
     </button>
   );

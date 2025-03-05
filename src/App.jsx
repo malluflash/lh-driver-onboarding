@@ -7,7 +7,6 @@ import { AuthProvider } from "./context/AuthContext";
 
 // Pages
 import Welcome from "./pages/Welcome";
-import Login from "./pages/Login";
 import Verify from "./pages/Verify";
 import Introduction from "./pages/Introduction";
 import FleetAgent from "./pages/FleetAgent";
@@ -36,7 +35,6 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Welcome />} />
-              <Route path="/login" element={<Login />} />
               <Route path="/verify" element={<Verify />} />
               <Route path="/introduction" element={<Introduction />} />
               <Route path="/fleet-agent" element={<FleetAgent />} />
