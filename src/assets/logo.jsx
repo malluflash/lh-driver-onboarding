@@ -1,84 +1,22 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import PageLayout from "@/components/PageLayout";
-import Button from "@/components/Button";
-
-const timeSlots = [
-  "09:00 - 09:30",
-  "09:30 - 10:00",
-  "10:00 - 10:30",
-  "10:30 - 11:00",
-  "11:00 - 11:30",
-  "11:30 - 12:00",
-  "12:00 - 12:30",
-  "12:30 - 13:00",
-  "14:00 - 14:30",
-];
-
-const FleetAgent = () => {
-  const navigate = useNavigate();
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  
-  const [selectedDate, setSelectedDate] = useState(tomorrow);
-  const [selectedTime, setSelectedTime] = useState(null);
-  const [showCalendar, setShowCalendar] = useState(false);
-
-  const handleScheduleMeeting = () => {
-    if (selectedDate && selectedTime) {
-      navigate("/", {
-        state: { date: selectedDate, time: selectedTime },
-      });
-    } else {
-      alert("Please select a date and time.");
-    }
-  };
-
+const LaundryheapLogo = () => {
   return (
-    <PageLayout title="Laundryheap Driver Onboarding">
-      <div className="w-full flex flex-col items-center space-y-4">
-        <button 
-          onClick={() => setShowCalendar(!showCalendar)} 
-          className="p-2 border rounded-md bg-[#FFD06D] text-center w-full max-w-xs transition-transform duration-200 hover:scale-105 active:scale-95">
-          {selectedDate.toDateString()} (Click to select a date)
-        </button>
-        
-        {showCalendar && (
-          <DatePicker
-            selected={selectedDate}
-            onChange={(date) => {
-              setSelectedDate(date);
-              setShowCalendar(false);
-            }}
-            minDate={tomorrow}
-            inline
+    <div className="flex flex-col justify-center items-center h-screen">
+      <div className="animate-slide-down w-40 h-40">
+        <svg
+          width="100%"
+          height="100%"
+          viewBox="270 0 170 160"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M280.839 14.6317C274.557 19.0512 270.817 26.2593 270.817 33.9496V83.0697C270.817 93.8463 276.229 103.9 285.217 109.821L342.641 147.655C350.499 152.832 360.678 152.832 368.536 147.655L425.96 109.821C434.948 103.9 440.36 93.8463 440.36 83.0698V33.9496C440.36 26.2594 436.62 19.0512 430.338 14.6317L415.635 4.28764C406.826 -1.90906 394.946 -1.33884 386.769 5.67309L370.912 19.272C362.091 26.836 349.086 26.836 340.265 19.272L324.408 5.67308C316.231 -1.33884 304.351 -1.90906 295.542 4.28764L280.839 14.6317Z"
+            fill="#FFD06D"
           />
-        )}
-
-        <div className="w-full max-w-xs">
-          <h3 className="text-center font-semibold mb-2">Select a Time Slot</h3>
-          <div className="grid grid-cols-2 gap-2">
-            {timeSlots.map((slot, index) => (
-              <button
-                key={index}
-                className={`p-2 border rounded-md text-center cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95 ${selectedTime === slot ? 'bg-blue-500 text-white' : 'bg-[#FFD06D]'}`}
-                onClick={() => setSelectedTime(slot)}
-              >
-                {slot}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <Button onClick={handleScheduleMeeting} className="w-full max-w-xs">
-          Schedule Meeting
-        </Button>
+        </svg>
       </div>
-    </PageLayout>
+    </div>
   );
 };
 
-export default FleetAgent;
-
+export default LaundryheapLogo;
